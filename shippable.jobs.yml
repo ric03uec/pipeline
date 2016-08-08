@@ -2,6 +2,7 @@ jobs:
   - name: image-manifest
     type: manifest
     steps:
+      - IN: box-opts
       - IN: deploy-image
         pull: false
         versionName: latest
