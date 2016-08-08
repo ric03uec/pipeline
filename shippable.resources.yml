@@ -23,7 +23,7 @@ resources:
         DB_PASSWORD: "aye0aye"
         ENVIRONMENT: "test-aws"
         FOO: "bar"
-        secure: UtoFFk+9gqvJRz4wHSGNPJS+ej/ghgW2iloUp3nT6XIiKN2eCFji+Rh4RrzI8NmMNYoys6ovs24yHoeYfry2WJ6vRKp2TWtj+gWMcizI6watoIpsTyQlPpFklJP3OBDHPEswJtg/7CnKrhj8p/X2mMA0N4WhT3MNTICtqHtcyIlQ1q+yALzAuadrbeHIM1PEe1UCwlQfmmWttfHY5e5oe9wqCRgCVqYapyo5bsF8p/e5+9H32IPsJwYU0WtdIAKZuawr28WWDhJ9SRBdqKKv6HJ68rOHa+MACHCSaxwFdUCn4FfWpvneI5GF9ejAtQMpIE/ibuLou7n06Nd27U70xQ==
+        #secure: UtoFFk+9gqvJRz4wHSGNPJS+ej/ghgW2iloUp3nT6XIiKN2eCFji+Rh4RrzI8NmMNYoys6ovs24yHoeYfry2WJ6vRKp2TWtj+gWMcizI6watoIpsTyQlPpFklJP3OBDHPEswJtg/7CnKrhj8p/X2mMA0N4WhT3MNTICtqHtcyIlQ1q+yALzAuadrbeHIM1PEe1UCwlQfmmWttfHY5e5oe9wqCRgCVqYapyo5bsF8p/e5+9H32IPsJwYU0WtdIAKZuawr28WWDhJ9SRBdqKKv6HJ68rOHa+MACHCSaxwFdUCn4FfWpvneI5GF9ejAtQMpIE/ibuLou7n06Nd27U70xQ==
 
   - name: infra-repo
     type: gitRepo
