@@ -7,7 +7,7 @@ resources:
 
   - name: deploy-image
     type: image
-    integration: ric03uec-dh
+    integration: ric03uec-dockerhub
     pointer:
       sourceName: "library/nginx"
     seed:
