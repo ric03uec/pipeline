@@ -48,5 +48,5 @@ resources:
   - name: box-scaler
     type: replicas
     version:
-      count: 1
+      count: 5
 
