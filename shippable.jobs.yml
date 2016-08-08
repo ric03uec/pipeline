@@ -1,7 +1,19 @@
 jobs:
+  - name: image-manifest
+    type: manifest
+    steps:
+      - IN: deploy-image
+        pull: false
+        versionName: latest
+      - IN: image-params
+        applyTo:
+          - deploy-image
+      - TASK: managed
+
   - name: build-image
     type: runSh
     steps:
+      - IN: image-manifest
       - IN: infra-repo
       - IN: image-params
       - TASK:
