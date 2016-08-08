@@ -1,0 +1,11 @@
+jobs:
+  - name: build-image
+    type: runSh
+    steps:
+      - IN: infra-repo
+      - IN: image-params
+      - TASK:
+        - script: "echo 'executing custom task'"
+        - script: ./IN/infra-repo/gitRepo/provision.sh
+    on_success:
+      - script: echo 'This block executes after TASK section executes successfully'
