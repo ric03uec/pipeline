@@ -9,7 +9,7 @@ resources:
     type: image
     integration: ric03uec-dockerhub
     pointer:
-      sourceName: "library/nginx"
+      sourceName: "library/nginx1"
     seed:
       versionName: latest
 
