@@ -23,6 +23,7 @@ resources:
         DB_PASSWORD: "aye0aye"
         ENVIRONMENT: "test-aws"
         FOO: "bar"
+        secure: pVQtEyEIOLHnW+6rsWY8RaohQLKNjV3tGzArZsN8CAbRnA9O1AgsW4e2uPpunEDKAGXu64xdhrMDGbovs/Ke5bFXEzWL3Wwty6PTtraqLV/LnqEAqsgQvjtNoui2SGyQr86kARBjazYIodQiY+0ew6TpYlq/qRCsXf/mH20FltAavFyLnKaYJ7eKsbBY0bhNX2oCNJnJDg2RrAm5/TPDZYiOxMEv0ODmQZ/06T6l9RqAw+HfJZLK80fHgebwypzwj4PuGykqTun17+AHOTCjurAE+gA1zijb3pvcKU2Cbeow2/REiwggNPI2KeLaNxVI0Ln3gv8q12CrwJeFzF7f/Q==
         #secure: UtoFFk+9gqvJRz4wHSGNPJS+ej/ghgW2iloUp3nT6XIiKN2eCFji+Rh4RrzI8NmMNYoys6ovs24yHoeYfry2WJ6vRKp2TWtj+gWMcizI6watoIpsTyQlPpFklJP3OBDHPEswJtg/7CnKrhj8p/X2mMA0N4WhT3MNTICtqHtcyIlQ1q+yALzAuadrbeHIM1PEe1UCwlQfmmWttfHY5e5oe9wqCRgCVqYapyo5bsF8p/e5+9H32IPsJwYU0WtdIAKZuawr28WWDhJ9SRBdqKKv6HJ68rOHa+MACHCSaxwFdUCn4FfWpvneI5GF9ejAtQMpIE/ibuLou7n06Nd27U70xQ==
 
   - name: infra-repo
