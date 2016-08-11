@@ -20,5 +20,6 @@ jobs:
       - TASK:
         - script: "echo 'executing custom task'"
         - script: ./IN/infra-repo/gitRepo/provision.sh
+        - script: echo $SSH_AUTH_SOCK && echo $SSH_AGENT_PID
     on_success:
       - script: echo 'This block executes after TASK section executes successfully'
