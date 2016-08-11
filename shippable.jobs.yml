@@ -14,6 +14,7 @@ jobs:
   - name: build-image
     type: runSh
     steps:
+      - IN: beta-aws-creds
       - IN: image-manifest
       - IN: infra-repo
       - IN: image-params

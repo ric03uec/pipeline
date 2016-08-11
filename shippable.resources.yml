@@ -37,11 +37,11 @@ resources:
       memory: 64
       cpuShares: 512
 
-  - name: env-prod
+  - name: beta-aws-creds
     type: cluster
     integration: ric03uec-ecs
     pointer:
-      sourceName : "prod-aws" #name of the cluster we are deploying
+      sourceName : "betaCL" #name of the cluster we are deploying
       region: "us-east-1"
 
   - name: box-scaler
