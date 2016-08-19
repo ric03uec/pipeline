@@ -23,4 +23,4 @@ jobs:
         - script: ./IN/infra-repo/gitRepo/provision.sh
         - script: echo $SSH_AUTH_SOCK && echo $SSH_AGENT_PID
     on_success:
-      - script: echo 'This block executes after TASK section executes successfully'
+      - script: echo 'This block execute after TASK section executes successfully'
