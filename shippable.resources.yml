@@ -1,5 +1,5 @@
 resources:
-  - name: dv-params
+  - name: dv.params
     type: params
     version:
       params:
