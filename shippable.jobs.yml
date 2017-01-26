@@ -1,5 +1,5 @@
 jobs:
-  - name: image-manifest
+  - name: image.manifest
     type: manifest
     steps:
       - IN: box-opts
