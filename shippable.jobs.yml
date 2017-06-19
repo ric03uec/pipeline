@@ -24,3 +24,29 @@ jobs:
       - script: echo 'succeeded'
     on_failure:
       - script: echo 'failed'
+
+  - name: instances-stop
+    type: runSh
+    steps:
+      - IN: aws-creds
+      - IN: infra-repo
+        switch: off
+      - TASK:
+        - script: echo "Running runsh task to stop the instance"
+    on_success:
+      - script: echo 'succeeded'
+    on_failure:
+      - script: echo 'failed'
+
+  - name: instances-start
+    type: runSh
+    steps:
+      - IN: aws-creds
+      - IN: infra-repo
+        switch: off
+      - TASK:
+        - script: echo "Running runsh task to start the instance"
+    on_success:
+      - script: echo 'succeeded'
+    on_failure:
+      - script: echo 'failed'
