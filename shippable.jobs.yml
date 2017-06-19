@@ -6,7 +6,20 @@ jobs:
       - IN: infra-repo
         switch: off
       - TASK:
-        - script: echo "Running runsh task"
+        - script: echo "Running runsh task to provision infra"
+    on_success:
+      - script: echo 'succeeded'
+    on_failure:
+      - script: echo 'failed'
+
+  - name: infra-destroy
+    type: runSh
+    steps:
+      - IN: aws-creds
+      - IN: infra-repo
+        switch: off
+      - TASK:
+        - script: echo "Running runsh task to destroy infra"
     on_success:
       - script: echo 'succeeded'
     on_failure:
