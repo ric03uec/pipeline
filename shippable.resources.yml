@@ -8,5 +8,5 @@ resources:
 
   - name: aws-creds
     type: integration
-    integration: cloud-aws-ri03uec
+    integration: cloud-aws-ric03uec
 
