@@ -1,52 +1,12 @@
 resources:
-  - name: dv.params
-    type: params
-    version:
-      params:
-        MONGO_API_URL: "localhost:28017"
-
-  - name: deploy-image
-    type: image
-    integration: ric03uec-dockerhub
-    pointer:
-      sourceName: "library/nginx1"
-    seed:
-      versionName: latest
-
-  - name: image-params
-    type: params
-    version:
-      params:
-        DB_NAME: "ayeaye"
-        DB_PORT: "15700"
-        DB_USERNAME: "aye0aye"
-        DB_PASSWORD: "aye0aye"
-        ENVIRONMENT: "test-aws"
-        FOO: "bar"
-
   - name: infra-repo
     type: gitRepo
-    integration: ric03uec-github
+    integration: scm-gl-ric03uec
     pointer:
       sourceName: ric03uec/infra
       branch: master
 
-  - name: box-opts
-    type: dockerOptions
-    version:
-      memory: 64
-      cpuShares: 512
-
-  - name: beta-aws-creds
-    type: cluster
-    integration: ric03uec-ecs
-    pointer:
-      sourceName : "betaCL" #name of the cluster we are deploying
-      region: "us-east-1"
-
-  - name: box-scaler
-    type: replicas
-    version:
-      count: 5
-
+  - name: aws-creds
+    type: integration
+    integration: cloud-aws-ri03uec
 

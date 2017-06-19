@@ -1,40 +1,13 @@
 jobs:
-  - name: image.manifest
-    type: manifest
-    steps:
-      - IN: box-opts
-      - IN: deploy-image
-        pull: false
-        versionName: latest
-      - IN: image-params
-        applyTo:
-          - deploy-image
-      - TASK: managed
-
-  - name: build-image
+  - name: infra-provision
     type: runSh
     steps:
-      - IN: beta-aws-creds
+      - IN: aws-creds
       - IN: infra-repo
-      - IN: image-params
+        switch: off
       - TASK:
-        - script: "echo 'executing custom task'"
-        - script: ./IN/infra-repo/gitRepo/provision.sh
-        - script: echo $SSH_AUTH_SOCK && echo $SSH_AGENT_PID
+        - script: echo "Running runsh task"
     on_success:
-      - script: echo 'This block execute after TASK section executes successfully'
-      
-  - name: build-image-2
-    type: runSh
-    steps:
-      - IN: beta-aws-creds
-      - IN: infra-repo
-      - IN: image-params
-      - TASK:
-        - script: "echo 'executing custom task'"
-        - script: ./IN/infra-repo/gitRepo/provision.sh
-        - script: echo $SSH_AUTH_SOCK && echo $SSH_AGENT_PID
-    on_success:
-      - script: echo 'This block execute after TASK section executes successfully'
-     
-
+      - script: echo 'succeeded'
+    on_failure:
+      - script: echo 'failed'

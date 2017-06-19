@@ -1,5 +1,0 @@
-triggers:
-   - name: trigger-dv-man
-     type: trigger
-     version:
-       counter: 2
