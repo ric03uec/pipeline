@@ -6,7 +6,7 @@ jobs:
       - IN: infra-repo
         switch: off
       - TASK:
-        - script: echo "Running runsh task to provision infra"
+        - script: IN/infra-repo/gitRepo/provision.sh
     on_success:
       - script: echo 'succeeded'
     on_failure:
