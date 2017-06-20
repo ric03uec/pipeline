@@ -29,6 +29,8 @@ jobs:
     type: runSh
     steps:
       - IN: aws-creds
+      - IN: infra-provision
+        switch: off
       - IN: infra-repo
         switch: off
       - TASK:
@@ -42,6 +44,8 @@ jobs:
     type: runSh
     steps:
       - IN: aws-creds
+      - IN: infra-provision
+        switch: off
       - IN: infra-repo
         switch: off
       - TASK:
