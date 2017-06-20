@@ -11,6 +11,8 @@ jobs:
       - script: echo 'succeeded'
     on_failure:
       - script: echo 'failed'
+    always:
+      - script: /build/IN/infra-repo/gitRepo/archiveState.sh
 
   - name: infra-destroy
     type: runSh
