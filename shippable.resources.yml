@@ -5,8 +5,15 @@ resources:
     pointer:
       sourceName: ric03uec/infra
       branch: master
+    flags:
+      - resource
+      - gitRep
 
   - name: aws-creds
     type: integration
     integration: cloud-aws-ric03uec
+    flags:
+      - resource
+      - aws
+      - credentials
 
