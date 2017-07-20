@@ -5,11 +5,13 @@ jobs:
       - jobs
       - infra
     steps:
+      - IN: infra-state
       - IN: aws-creds
       - IN: infra-repo
         switch: off
       - TASK:
         - script: IN/infra-repo/gitRepo/provision.sh
+      - OUT: infra-state
     on_success:
       - script: echo 'succeeded'
     on_failure:
@@ -23,11 +25,13 @@ jobs:
       - jobs
       - infra
     steps:
+      - IN: infra-state
       - IN: aws-creds
       - IN: infra-repo
         switch: off
       - TASK:
         - script: echo "Running runsh task to destroy infra"
+      - OUT: infra-state
     on_success:
       - script: echo 'succeeded'
     on_failure:
