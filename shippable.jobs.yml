@@ -2,7 +2,6 @@ jobs:
   - name: infra-provision
     type: runSh
     flags:
-      - jobs
       - infra
     steps:
       - IN: infra-state
@@ -22,7 +21,6 @@ jobs:
   - name: infra-destroy
     type: runSh
     flags:
-      - jobs
       - infra
     steps:
       - IN: infra-state
@@ -40,7 +38,6 @@ jobs:
   - name: instances-stop
     type: runSh
     flags:
-      - jobs
       - infra
     steps:
       - IN: aws-creds
@@ -58,7 +55,6 @@ jobs:
   - name: instances-start
     type: runSh
     flags:
-      - jobs
       - infra
     steps:
       - IN: aws-creds

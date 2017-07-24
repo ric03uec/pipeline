@@ -6,16 +6,21 @@ resources:
       sourceName: ric03uec/infra
       branch: master
     flags:
-      - resource
-      - gitRep
+      - dev
+
+  - name: dh-creds
+    type: integration
+    integration: reg-dh-ric03uec
+    flags:
+      - dev
 
   - name: aws-creds
     type: integration
     integration: cloud-aws-ric03uec
     flags:
-      - resource
-      - aws
-      - credentials
+      - infra
 
   - name: infra-state
     type: state
+    flags:
+      - infra
