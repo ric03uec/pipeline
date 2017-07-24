@@ -1,4 +1,11 @@
 jobs:
+  - name: notes_runCI
+    type: runCI
+    flags:
+      - dev
+    steps:
+      - IN: dh-creds
+
   - name: infra-provision
     type: runSh
     flags:
