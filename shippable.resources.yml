@@ -8,15 +8,9 @@ resources:
     flags:
       - dev
 
-  - name: dh-creds
-    type: integration
-    integration: reg-dh-ric03uec
-    flags:
-      - dev
-
   - name: notes-image
     type: image
-    integration: dh-creds
+    integration: reg-dh-ric03uec
     pointer:
       sourceName: "ric03uec/notes"
     seed:
