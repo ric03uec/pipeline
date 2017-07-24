@@ -14,6 +14,16 @@ resources:
     flags:
       - dev
 
+  - name: notes-image
+    type: image
+    integration: dh-creds
+    pointer:
+      sourceName: "ric03uec/notes"
+    seed:
+      versionName: ci
+    flags:
+      - dev
+
   - name: aws-creds
     type: integration
     integration: cloud-aws-ric03uec

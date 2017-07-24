@@ -5,6 +5,7 @@ jobs:
       - dev
     steps:
       - IN: dh-creds
+      - OUT: notes-image
 
   - name: infra-provision
     type: runSh
