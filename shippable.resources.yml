@@ -1,13 +1,4 @@
 resources:
-  - name: infra-repo
-    type: gitRepo
-    integration: scm-gl-ric03uec
-    pointer:
-      sourceName: ric03uec/infra
-      branch: master
-    flags:
-      - dev
-
   - name: notes-image
     type: image
     integration: reg-dh-ric03uec
@@ -17,6 +8,15 @@ resources:
       versionName: ci
     flags:
       - dev
+
+  - name: infra-repo
+    type: gitRepo
+    integration: scm-gl-ric03uec
+    pointer:
+      sourceName: ric03uec/infra
+      branch: master
+    flags:
+      - infra
 
   - name: aws-creds
     type: integration
