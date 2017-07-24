@@ -3,6 +3,8 @@ jobs:
     type: runCI
     flags:
       - dev
+    steps:
+      - OUT: notes-image
 
   - name: infra-provision
     type: runSh
