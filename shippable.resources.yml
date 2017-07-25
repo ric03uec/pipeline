@@ -1,7 +1,10 @@
+# Convention is
+# resource_type <for> resource_name
+# using underscore preferable because of easy searching and autocomplete
 resources:
-  - name: notes-image
+  - name: image_notes
     type: image
-    integration: reg-dh-ric03uec
+    integration: reg_dh_ric03uec
     pointer:
       sourceName: "ric03uec/notes"
     seed:
@@ -9,22 +12,22 @@ resources:
     flags:
       - dev
 
-  - name: infra-repo
+  - name: repo_infra
     type: gitRepo
-    integration: scm-gl-ric03uec
+    integration: scm_gl_ric03uec
     pointer:
       sourceName: ric03uec/infra
       branch: master
     flags:
       - infra
 
-  - name: aws-creds
+  - name: creds_aws
     type: integration
-    integration: cloud-aws-ric03uec
+    integration: cloud_aws_ric03uec
     flags:
       - infra
 
-  - name: infra-state
+  - name: state_infra
     type: state
     flags:
       - infra

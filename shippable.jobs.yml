@@ -4,53 +4,53 @@ jobs:
     flags:
       - dev
     steps:
-      - OUT: notes-image
+      - OUT: image_notes
 
-  - name: infra-provision
+  - name: provision_infra
     type: runSh
     flags:
       - infra
     steps:
-      - IN: infra-state
-      - IN: aws-creds
-      - IN: infra-repo
+      - IN: state_infra
+      - IN: creds_aws
+      - IN: repo_infra
         switch: off
       - TASK:
-        - script: IN/infra-repo/gitRepo/provision.sh
-      - OUT: infra-state
+        - script: IN/repo_infra/gitRepo/provision.sh
+      - OUT: state_infra
     on_success:
       - script: echo 'succeeded'
     on_failure:
       - script: echo 'failed'
     always:
-      - script: /build/IN/infra-repo/gitRepo/archiveState.sh
+      - script: /build/IN/repo_infra/gitRepo/archiveState.sh
 
-  - name: infra-destroy
+  - name: destroy_infra
     type: runSh
     flags:
       - infra
     steps:
-      - IN: infra-state
-      - IN: aws-creds
-      - IN: infra-repo
+      - IN: state_infra
+      - IN: creds_aws
+      - IN: repo_infra
         switch: off
       - TASK:
         - script: echo "Running runsh task to destroy infra"
-      - OUT: infra-state
+      - OUT: state_infra
     on_success:
       - script: echo 'succeeded'
     on_failure:
       - script: echo 'failed'
 
-  - name: instances-stop
+  - name: stop_instances
     type: runSh
     flags:
       - infra
     steps:
-      - IN: aws-creds
-      - IN: infra-provision
+      - IN: creds_aws
+      - IN: provision_infra
         switch: off
-      - IN: infra-repo
+      - IN: repo_infra
         switch: off
       - TASK:
         - script: echo "Running runsh task to stop the instance"
@@ -59,15 +59,15 @@ jobs:
     on_failure:
       - script: echo 'failed'
 
-  - name: instances-start
+  - name: start_instances
     type: runSh
     flags:
       - infra
     steps:
-      - IN: aws-creds
-      - IN: infra-provision
+      - IN: creds_aws
+      - IN: provision_infra
         switch: off
-      - IN: infra-repo
+      - IN: repo_infra
         switch: off
       - TASK:
         - script: echo "Running runsh task to start the instance"
