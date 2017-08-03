@@ -6,6 +6,16 @@ jobs:
     steps:
       - OUT: image_notes
 
+  - name: deploy_notes
+    type: runSh
+    flags:
+      - dev
+    steps:
+      - IN: image_notes
+      - IN: pipeline_master
+      - TASK:
+        - script: /build/IN/pipeline_master/gitRepo/
+
   - name: provision_infra
     type: runSh
     flags:
