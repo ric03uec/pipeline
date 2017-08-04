@@ -15,7 +15,7 @@ jobs:
       - IN: pipeline_master
         switch: off
       - TASK:
-        - script: /build/IN/pipeline_master/gitRepo/
+        - script: /build/IN/pipeline_master/gitRepo/scripts/deploy.sh
 
   - name: provision_infra
     type: runSh
