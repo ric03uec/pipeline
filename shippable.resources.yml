@@ -2,6 +2,13 @@
 # resource_type <for> resource_name
 # using underscore preferable because of easy searching and autocomplete
 resources:
+  - name: glue
+    type: gitRepo
+    integration: scm_gl_ric03uec
+    pointer:
+      sourceName: ric03uec/glue
+      branch: master
+
   - name: image_notes
     type: image
     integration: reg_dh_ric03uec
