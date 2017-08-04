@@ -13,6 +13,7 @@ jobs:
     steps:
       - IN: image_notes
       - IN: pipeline_master
+        switch: off
       - TASK:
         - script: /build/IN/pipeline_master/gitRepo/
 
