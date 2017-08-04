@@ -13,7 +13,7 @@ jobs:
         switch: off
       - IN: image_notes
       - TASK:
-        - script: ls -al /build/IN/glue/gitRepo/deploy_notes/do.sh
+        - script: /build/IN/glue/gitRepo/deploy_notes/do.sh
     flags:
       - dev
 
