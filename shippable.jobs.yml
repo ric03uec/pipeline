@@ -9,11 +9,9 @@ jobs:
   - name: deploy_notes
     type: runSh
     steps:
-      - IN: gule
+      - IN: glue
         switch: off
       - IN: image_notes
-      - IN: pipeline_master
-        switch: off
       - TASK:
         - script: ls -al /build/IN/glue/gitRepo/deploy_notes/do.sh
     flags:
