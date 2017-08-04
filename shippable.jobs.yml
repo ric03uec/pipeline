@@ -11,6 +11,8 @@ jobs:
     steps:
       - IN: glue
         switch: off
+      - IN: ssh_notes_deploy
+      - IN: kv_notes_deploy
       - IN: image_notes
       - TASK:
         - script: /build/IN/glue/gitRepo/deploy_notes/do.sh

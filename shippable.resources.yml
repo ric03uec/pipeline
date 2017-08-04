@@ -19,6 +19,18 @@ resources:
     flags:
       - dev
 
+  - name: kv_notes_deploy
+    type: integration
+    integration: kv_notes_deploy
+    flags:
+      - infra
+
+  - name: ssh_notes_deploy
+    type: integration
+    integration: ssh_notes_deploy
+    flags:
+      - secrets
+
   - name: repo_infra
     type: gitRepo
     integration: scm_gl_ric03uec
