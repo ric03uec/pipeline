@@ -9,20 +9,20 @@ jobs:
   - name: deploy_notes
     type: runSh
     steps:
-      - IN: glue
+      - IN: helpers
         switch: off
       - IN: ssh_notes_deploy
       - IN: kv_notes_deploy
       - IN: image_notes
       - TASK:
-        - script: /build/IN/glue/gitRepo/deploy_notes/do.sh
+        - script: /build/IN/helpers/gitRepo/deploy_notes/do.sh
     flags:
       - dev
 
   - name: provision_infra
     type: runSh
     steps:
-      - IN: glue
+      - IN: helpers
         switch: off
       - IN: state_infra
       - IN: creds_aws
@@ -43,7 +43,7 @@ jobs:
   - name: destroy_infra
     type: runSh
     steps:
-      - IN: glue
+      - IN: helpers
         switch: off
       - IN: state_infra
       - IN: creds_aws
@@ -62,7 +62,7 @@ jobs:
   - name: stop_instances
     type: runSh
     steps:
-      - IN: glue
+      - IN: helpers
         switch: off
       - IN: creds_aws
       - IN: provision_infra
@@ -81,7 +81,7 @@ jobs:
   - name: start_instances
     type: runSh
     steps:
-      - IN: glue
+      - IN: helpers
         switch: off
       - IN: creds_aws
       - IN: provision_infra
