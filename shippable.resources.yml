@@ -1,5 +1,3 @@
-# Convention is
-# resource_type <for> resource_name
 # using underscore preferable because of easy searching and autocomplete
 resources:
   - name: helpers
