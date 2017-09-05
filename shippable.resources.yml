@@ -1,12 +1,10 @@
-# Convention is
-# resource_type <for> resource_name
 # using underscore preferable because of easy searching and autocomplete
 resources:
-  - name: glue
+  - name: helpers
     type: gitRepo
     integration: scm_gl_ric03uec
     pointer:
-      sourceName: ric03uec/glue
+      sourceName: ric03uec/helpers
       branch: master
 
   - name: image_notes
