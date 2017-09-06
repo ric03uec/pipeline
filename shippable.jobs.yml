@@ -19,6 +19,27 @@ jobs:
     flags:
       - dev
 
+  - name: verify_infra_changes
+    type: runSh
+    steps:
+      - IN: helpers
+        switch: off
+      - IN: state_infra
+      - IN: creds_aws
+        switch: off
+      - IN: repo_infra
+      - TASK:
+        - script: IN/repo_infra/gitRepo/helpers/plan.sh
+      - OUT: state_infra
+    on_success:
+      - script: echo 'succeeded'
+    on_failure:
+      - script: echo 'failed'
+    always:
+      - script: /build/IN/repo_infra/gitRepo/helpers/archiveState.sh
+    flags:
+      - infra
+
   - name: provision_infra
     type: runSh
     steps:
@@ -28,6 +49,8 @@ jobs:
       - IN: creds_aws
       - IN: repo_infra
         switch: off
+      - IN: verify_infra_changes
+        switch: off
       - TASK:
         - script: IN/repo_infra/gitRepo/provision.sh
       - OUT: state_infra
@@ -36,7 +59,7 @@ jobs:
     on_failure:
       - script: echo 'failed'
     always:
-      - script: /build/IN/repo_infra/gitRepo/archiveState.sh
+      - script: /build/IN/repo_infra/gitRepo/helpers/archiveState.sh
     flags:
       - infra
 
@@ -48,6 +71,8 @@ jobs:
       - IN: state_infra
       - IN: creds_aws
       - IN: repo_infra
+        switch: off
+      - IN: verify_infra_changes
         switch: off
       - TASK:
         - script: echo "Running runsh task to destroy infra"
