@@ -36,7 +36,7 @@ jobs:
     on_failure:
       - script: echo 'failed'
     always:
-      - script: /build/IN/repo_infra/gitRepo/archiveState.sh
+      - script: /build/IN/repo_infra/gitRepo/archiveState.sh state_infra
     flags:
       - infra
 
@@ -59,7 +59,7 @@ jobs:
     on_failure:
       - script: echo 'failed'
     always:
-      - script: /build/IN/repo_infra/gitRepo/archiveState.sh
+      - script: /build/IN/repo_infra/gitRepo/archiveState.sh state_infra
     flags:
       - infra
 
