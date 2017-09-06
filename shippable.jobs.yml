@@ -75,11 +75,9 @@ jobs:
         - script: IN/repo_infra/gitRepo/destroy.sh state_infra
       - OUT: state_infra
     on_success:
-      - script: echo 'succeeded'
+      - script: /build/IN/repo_infra/gitRepo/archiveState.sh state_infra
     on_failure:
       - script: echo 'failed'
-    always:
-      - script: /build/IN/repo_infra/gitRepo/archiveState.sh state_infra
     flags:
       - infra
 
