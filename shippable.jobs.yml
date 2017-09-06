@@ -81,37 +81,19 @@ jobs:
     flags:
       - infra
 
-  - name: stop_instances
+  - name: bootstrap_rp
     type: runSh
     steps:
       - IN: helpers
         switch: off
       - IN: creds_aws
-      - IN: provision_infra
+        switch: off
+      - IN: state_infra
         switch: off
       - IN: repo_infra
         switch: off
       - TASK:
-        - script: echo "Running runsh task to stop the instance"
-    on_success:
-      - script: echo 'succeeded'
-    on_failure:
-      - script: echo 'failed'
-    flags:
-      - infra
-
-  - name: start_instances
-    type: runSh
-    steps:
-      - IN: helpers
-        switch: off
-      - IN: creds_aws
-      - IN: provision_infra
-        switch: off
-      - IN: repo_infra
-        switch: off
-      - TASK:
-        - script: echo "Running runsh task to start the instance"
+        - script: IN/repo_infra/gitRepo/bootstrap.sh
     on_success:
       - script: echo 'succeeded'
     on_failure:
