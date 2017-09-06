@@ -72,12 +72,14 @@ jobs:
       - IN: verify_infra_changes
         switch: off
       - TASK:
-        - script: echo "Running runsh task to destroy infra"
+        - script: IN/repo_infra/gitRepo/destroy.sh state_infra
       - OUT: state_infra
     on_success:
       - script: echo 'succeeded'
     on_failure:
       - script: echo 'failed'
+    always:
+      - script: /build/IN/repo_infra/gitRepo/archiveState.sh state_infra
     flags:
       - infra
 
