@@ -81,7 +81,7 @@ jobs:
     flags:
       - infra
 
-  - name: bootstrap_rp
+  - name: bootstrap
     type: runSh
     steps:
       - IN: helpers
