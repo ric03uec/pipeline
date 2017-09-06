@@ -35,8 +35,6 @@ jobs:
       - script: echo 'succeeded'
     on_failure:
       - script: echo 'failed'
-    always:
-      - script: /build/IN/repo_infra/gitRepo/archiveState.sh state_infra
     flags:
       - infra
 
