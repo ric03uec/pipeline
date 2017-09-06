@@ -29,14 +29,14 @@ jobs:
         switch: off
       - IN: repo_infra
       - TASK:
-        - script: IN/repo_infra/gitRepo/helpers/plan.sh
+        - script: IN/repo_infra/gitRepo/plan.sh
       - OUT: state_infra
     on_success:
       - script: echo 'succeeded'
     on_failure:
       - script: echo 'failed'
     always:
-      - script: /build/IN/repo_infra/gitRepo/helpers/archiveState.sh
+      - script: /build/IN/repo_infra/gitRepo/archiveState.sh
     flags:
       - infra
 
@@ -59,7 +59,7 @@ jobs:
     on_failure:
       - script: echo 'failed'
     always:
-      - script: /build/IN/repo_infra/gitRepo/helpers/archiveState.sh
+      - script: /build/IN/repo_infra/gitRepo/archiveState.sh
     flags:
       - infra
 
