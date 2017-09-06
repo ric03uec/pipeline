@@ -1,24 +1,4 @@
 jobs:
-  - name: notes_runCI
-    type: runCI
-    steps:
-      - OUT: image_notes
-    flags:
-      - dev
-
-  - name: deploy_notes
-    type: runSh
-    steps:
-      - IN: helpers
-        switch: off
-      - IN: ssh_notes_deploy
-      - IN: kv_notes_deploy
-      - IN: image_notes
-      - TASK:
-        - script: /build/IN/helpers/gitRepo/deploy_notes/do.sh
-    flags:
-      - dev
-
   - name: verify_infra_changes
     type: runSh
     steps:
@@ -92,6 +72,8 @@ jobs:
         switch: off
       - IN: repo_infra
         switch: off
+      - IN: provision_infra
+        switch: off
       - TASK:
         - script: IN/repo_infra/gitRepo/bootstrap.sh
     on_success:
@@ -100,3 +82,25 @@ jobs:
       - script: echo 'failed'
     flags:
       - infra
+
+  - name: notes_runCI
+    type: runCI
+    steps:
+      - OUT: image_notes
+    flags:
+      - dev
+
+  - name: deploy_notes
+    type: runSh
+    steps:
+      - IN: helpers
+        switch: off
+      - IN: ssh_notes_deploy
+      - IN: kv_notes_deploy
+      - IN: image_notes
+      - IN: bootstrap
+        switch: off
+      - TASK:
+        - script: /build/IN/helpers/gitRepo/deploy_notes/do.sh
+    flags:
+      - dev
