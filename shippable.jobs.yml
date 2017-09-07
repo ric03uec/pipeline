@@ -68,6 +68,8 @@ jobs:
         switch: off
       - IN: creds_aws
         switch: off
+      - IN: ssh_notes_deploy
+        switch: off
       - IN: state_infra
         switch: off
       - IN: repo_infra
