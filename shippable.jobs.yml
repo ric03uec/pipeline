@@ -118,7 +118,6 @@ jobs:
       - IN: helpers
         switch: off
       - IN: ssh_notes_deploy
-      - IN: kv_notes_deploy
       - IN: image_blog
       - IN: bootstrap
         switch: off
