@@ -90,6 +90,13 @@ jobs:
     flags:
       - dev
 
+  - name: blog_runCI
+    type: runCI
+    steps:
+      - out: image_blog
+    flags:
+      - demo
+
   - name: deploy_notes
     type: runSh
     steps:
