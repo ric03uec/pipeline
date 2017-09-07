@@ -116,6 +116,7 @@ jobs:
     type: runSh
     steps:
       - IN: state_infra
+      - IN: creds_aws
       - IN: helpers
         switch: off
       - IN: ssh_notes_deploy
