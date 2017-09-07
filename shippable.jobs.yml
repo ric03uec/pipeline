@@ -93,7 +93,7 @@ jobs:
   - name: demoBlog_runCI
     type: runCI
     steps:
-      - out: image_blog
+      - OUT: image_blog
     flags:
       - demo
 
