@@ -17,6 +17,16 @@ resources:
     flags:
       - dev
 
+  - name: image_blog
+    type: image
+    integration: reg_dh_ric03uec
+    pointer:
+      sourceName: "ric03uec/blog"
+    seed:
+      versionName: ci
+    flags:
+      - demo
+
   - name: kv_notes_deploy
     type: integration
     integration: kv_notes_deploy
