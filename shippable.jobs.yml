@@ -115,6 +115,7 @@ jobs:
   - name: deploy_blog
     type: runSh
     steps:
+      - IN: state_infra
       - IN: helpers
         switch: off
       - IN: ssh_notes_deploy
