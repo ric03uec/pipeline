@@ -116,6 +116,8 @@ jobs:
     type: runSh
     steps:
       - IN: state_infra
+      - IN: repo_infra
+        switch: off
       - IN: creds_aws
       - IN: helpers
         switch: off
