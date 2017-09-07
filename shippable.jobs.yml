@@ -90,7 +90,7 @@ jobs:
     flags:
       - dev
 
-  - name: blog_runCI
+  - name: demoBlog_runCI
     type: runCI
     steps:
       - out: image_blog
