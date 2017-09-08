@@ -68,7 +68,7 @@ jobs:
         switch: off
       - IN: creds_aws
         switch: off
-      - IN: ssh_notes_deploy
+      - IN: ssh_blog_deploy
         switch: off
       - IN: state_infra
         switch: off
@@ -123,7 +123,7 @@ jobs:
       - IN: creds_aws
       - IN: helpers
         switch: off
-      - IN: ssh_notes_deploy
+      - IN: ssh_blog_deploy
       - IN: image_blog
       - IN: bootstrap
         switch: off

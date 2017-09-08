@@ -39,6 +39,12 @@ resources:
     flags:
       - secrets
 
+  - name: ssh_blog_deploy
+    type: integration
+    integration: pem_aws_ric03uec
+    flags:
+      - secrets
+
   - name: repo_infra
     type: gitRepo
     integration: scm_gl_ric03uec
