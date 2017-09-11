@@ -104,6 +104,8 @@ jobs:
     steps:
       - IN: state_infra
         switch: off
+      - IN: reg_dh_ric03uec
+        switch: off
       - IN: creds_aws
         switch: off
       - IN: helpers
