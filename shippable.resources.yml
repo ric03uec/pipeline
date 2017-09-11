@@ -29,7 +29,7 @@ resources:
 
   - name: ssh_notes_deploy
     type: integration
-    integration: ssh_notes_deploy
+    integration: pem_aws_ric03uec
     flags:
       - secrets
 
