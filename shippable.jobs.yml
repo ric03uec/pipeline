@@ -102,12 +102,18 @@ jobs:
   - name: deploy_notes
     type: runSh
     steps:
+      - IN: state_infra
+        switch: off
+      - IN: creds_aws
+        switch: off
       - IN: helpers
+        switch: off
+      - IN: repo_infra
+        switch: off
+      - IN: bootstrap
         switch: off
       - IN: ssh_notes_deploy
       - IN: image_notes
-      - IN: bootstrap
-        switch: off
       - TASK:
         - script: /build/IN/helpers/gitRepo/deploy_notes/do.sh
     flags:
@@ -117,15 +123,17 @@ jobs:
     type: runSh
     steps:
       - IN: state_infra
-      - IN: repo_infra
         switch: off
       - IN: creds_aws
+        switch: off
       - IN: helpers
+        switch: off
+      - IN: repo_infra
+        switch: off
+      - IN: bootstrap
         switch: off
       - IN: ssh_blog_deploy
       - IN: image_blog
-      - IN: bootstrap
-        switch: off
       - TASK:
         - script: IN/helpers/gitRepo/deploy_blog/do.sh
     flags:
