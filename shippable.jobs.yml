@@ -108,6 +108,8 @@ jobs:
         switch: off
       - IN: creds_aws
         switch: off
+      - IN: notes_login_creds
+        switch: off
       - IN: helpers
         switch: off
       - IN: repo_infra

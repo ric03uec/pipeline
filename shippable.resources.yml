@@ -13,6 +13,14 @@ resources:
     flags:
       - secrets
 
+  - name: notes_login_creds
+    type: params
+    version:
+      params:
+        secure: TEg85MEExu8uJ+IU9CM8pw8H5W8HlYbIHFlnUrPIsCT92SS5GPnkrBmlFJH/5biMIkRMJ5nJyFbSInCA850Lij/K63ar9I6W2BKosuPVoPNuB83LMVLGRfHMbsfBvKbhJ+FODac/l2CAppcpCPrrCUPFNrypEYEPEZESiNHbrQLb5Jsz+7LcGLmT8P7R98YtWau30OqRiVcVHjWyZFlkLuBlWU8+dsq+04ZRX+R02kZ4FRQaT0SX3UC4fh+bbJky+65SVxjOBfqMTYp215+RNVC33PAmrK+OloAibpOoNpUrOptDs4D4ze2FM/3y8dgANwpbaDyV6kIZZNJecozTxw==
+    flags:
+      - secrets
+
   - name: image_notes
     type: image
     integration: reg_dh_ric03uec
