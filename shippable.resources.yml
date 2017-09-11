@@ -7,6 +7,12 @@ resources:
       sourceName: ric03uec/helpers
       branch: master
 
+  - name: reg_dh_ric03uec
+    type: integration
+    integration: reg_dh_ric03uec
+    flags:
+      - secrets
+
   - name: image_notes
     type: image
     integration: reg_dh_ric03uec
