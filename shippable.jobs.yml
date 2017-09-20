@@ -29,7 +29,7 @@ jobs:
       - IN: verify_infra_changes
         switch: off
       - TASK:
-        - script: IN/repo_infra/gitRepo/provision.sh state_infra
+        - script: IN/helpers/gitRepo/provision_infra/do.sh
       - OUT: state_infra
     on_success:
       - script: echo 'succeeded'
