@@ -9,7 +9,7 @@ jobs:
         switch: off
       - IN: repo_infra
       - TASK:
-        - script: IN/repo_infra/gitRepo/plan.sh state_infra
+        - script: IN/helpers/gitRepo/verify_infra_changes/do.sh
     on_success:
       - script: echo 'succeeded'
     on_failure:
