@@ -77,7 +77,7 @@ jobs:
       - IN: provision_infra
         switch: off
       - TASK:
-        - script: IN/repo_infra/gitRepo/bootstrap.sh
+        - script: IN/helpers/gitRepo/bootstrap/do.sh
     on_success:
       - script: echo 'succeeded'
     on_failure:
