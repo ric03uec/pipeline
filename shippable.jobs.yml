@@ -36,6 +36,9 @@ jobs:
     on_failure:
       - script: echo 'failed'
     always:
+      - script: ls -ath IN/
+      - script: ls -ath IN/gitRepo
+      - script: ls -ath IN/gitRepo/archive_state
       - script: IN/helpers/gitRepo/archive_state/do.sh
     flags:
       - infra
