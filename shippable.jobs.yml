@@ -36,7 +36,7 @@ jobs:
     on_failure:
       - script: echo 'failed'
     always:
-      - script: /build/IN/repo_infra/gitRepo/archiveState.sh state_infra
+      - script: IN/helpers/gitRepo/archive_state/do.sh
     flags:
       - infra
 
@@ -55,7 +55,7 @@ jobs:
         - script: IN/helpers/gitRepo/destroy_infra/do.sh
       - OUT: state_infra
     on_success:
-      - script: /build/IN/repo_infra/gitRepo/archiveState.sh state_infra
+      - script: IN/helpers/gitRepo/archive_state/do.sh
     on_failure:
       - script: echo 'failed'
     flags:
