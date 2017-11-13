@@ -72,3 +72,10 @@ resources:
     type: state
     flags:
       - infra
+
+  - name: slack
+    type: notification
+    integration: slack-ric03uec
+    pointer:
+      recipients:
+        - "#build"

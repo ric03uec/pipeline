@@ -116,6 +116,10 @@ jobs:
       - IN: image_notes
       - TASK:
         - script: /build/IN/helpers/gitRepo/deploy_notes/do.sh
+    on_success:
+      - NOTIFY: slack
+    on_failure:
+      - NOTIFY: slack
     flags:
       - dev
 
