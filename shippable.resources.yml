@@ -78,4 +78,4 @@ resources:
     integration: slack-ric03uec
     pointer:
       recipients:
-        - "#build"
+        - "#builds"
