@@ -118,10 +118,8 @@ jobs:
           runtime:
             container: false
           script:
-            - ls -atlh /build/
-            - ls -atlh /build/IN
-            - ls -atlh /build/IN/helpers
-            - /build/IN/helpers/gitRepo/deploy_notes/do.sh
+            - ls -atlh $BUILD_DIR
+            - $BUILD_DIR/IN/helpers/gitRepo/deploy_notes/do.sh
     on_success:
       - NOTIFY: slack
     on_failure:
