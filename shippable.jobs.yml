@@ -115,10 +115,8 @@ jobs:
       - IN: ssh_notes_deploy
       - IN: image_notes
       - TASK:
-          runtime:
-            container: false
           script:
-            - ls -atlh $BUILD_DIR
+            - echo $BUILD_DIR
             - $BUILD_DIR/IN/helpers/gitRepo/deploy_notes/do.sh
     on_success:
       - NOTIFY: slack
