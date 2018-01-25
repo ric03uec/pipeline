@@ -17,7 +17,7 @@ resources:
     type: params
     version:
       params:
-        secure: TEg85MEExu8uJ+IU9CM8pw8H5W8HlYbIHFlnUrPIsCT92SS5GPnkrBmlFJH/5biMIkRMJ5nJyFbSInCA850Lij/K63ar9I6W2BKosuPVoPNuB83LMVLGRfHMbsfBvKbhJ+FODac/l2CAppcpCPrrCUPFNrypEYEPEZESiNHbrQLb5Jsz+7LcGLmT8P7R98YtWau30OqRiVcVHjWyZFlkLuBlWU8+dsq+04ZRX+R02kZ4FRQaT0SX3UC4fh+bbJky+65SVxjOBfqMTYp215+RNVC33PAmrK+OloAibpOoNpUrOptDs4D4ze2FM/3y8dgANwpbaDyV6kIZZNJecozTxw==
+        secure: WQ215HoT8PvqGG0GKglFF1X9zGNJW5iP/yYMvb/aAul7uHs7NpysGsFipQe9JvKMajGptPhZjZHb9/w+b4/I6kSrgttSby3Io0EI0Zb0gc00XwZsxwGKT5SmtIZiZTLRMKCAqlKAUC7eHSNbAhTodXHBMEWPitV+E0bNPBJydJjfK0HVikBYud5g2kGiE0+4mW4gyItTzDQijb5yA1KGiOgUZRyHaJnHTNTbn6+RfDu/n1UGKXqSGYHWh+ShAZHf1vphnbjdXa4w0gNv35LyrmtCu6N3D8OJ9CeDIcDUsp17eV2zZEad7fT28B1uc+NenEvpmLoyM2TgwFZJn6i8lQ==
     flags:
       - secrets
 
