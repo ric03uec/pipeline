@@ -34,7 +34,7 @@ resources:
 
   - name: ssh_notes_deploy
     type: integration
-    integration: pem_aws_ric03uec
+    integration: ric03uec_gce_pem
     flags:
       - ric03uec_notes
 
