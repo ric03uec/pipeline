@@ -1,3 +1,64 @@
+resources:
+  - name: helpers
+    type: gitRepo
+    integration: scm_gl_ric03uec
+    pointer:
+      sourceName: ric03uec/helpers
+      branch: master
+    flags:
+      - ric03uec_notes
+
+  - name: reg_dh_ric03uec
+    type: integration
+    integration: reg_dh_ric03uec
+    flags:
+      - ric03uec_notes
+
+  - name: notes_login_creds
+    type: params
+    version:
+      params:
+        secure: WQ215HoT8PvqGG0GKglFF1X9zGNJW5iP/yYMvb/aAul7uHs7NpysGsFipQe9JvKMajGptPhZjZHb9/w+b4/I6kSrgttSby3Io0EI0Zb0gc00XwZsxwGKT5SmtIZiZTLRMKCAqlKAUC7eHSNbAhTodXHBMEWPitV+E0bNPBJydJjfK0HVikBYud5g2kGiE0+4mW4gyItTzDQijb5yA1KGiOgUZRyHaJnHTNTbn6+RfDu/n1UGKXqSGYHWh+ShAZHf1vphnbjdXa4w0gNv35LyrmtCu6N3D8OJ9CeDIcDUsp17eV2zZEad7fT28B1uc+NenEvpmLoyM2TgwFZJn6i8lQ==
+    flags:
+      - ric03uec_notes
+
+  - name: image_notes
+    type: image
+    integration: reg_dh_ric03uec
+    pointer:
+      sourceName: "ric03uec/notes"
+    seed:
+      versionName: ci
+    flags:
+      - ric03uec_notes
+
+  - name: ssh_notes_deploy
+    type: integration
+    integration: pem_aws_ric03uec
+    flags:
+      - ric03uec_notes
+
+  - name: repo_infra
+    type: gitRepo
+    integration: scm_gl_ric03uec
+    pointer:
+      sourceName: ric03uec/infra
+      branch: master
+    flags:
+      - ric03uec_notes
+
+  - name: state_gce
+    type: state
+    flags:
+      - infra
+
+  - name: slack
+    type: notification
+    integration: slack-ric03uec
+    pointer:
+      recipients:
+        - "#builds"
+
 jobs:
   - name: verify_infra_changes
     type: runSh
@@ -7,7 +68,10 @@ jobs:
       - IN: state_infra
       - IN: repo_infra
       - TASK:
-        - script: IN/helpers/gitRepo/verify_infra_changes/do.sh
+          name: "Verify infra changes"
+          script:
+          - echo "Verifying infra changes"
+        # - IN/helpers/gitRepo/verify_infra_changes/do.sh
     on_success:
       - script: echo 'succeeded'
     on_failure:
@@ -26,7 +90,10 @@ jobs:
       - IN: verify_infra_changes
         switch: off
       - TASK:
-        - script: IN/helpers/gitRepo/provision_infra/do.sh
+          name: "Provision infra"
+          script:
+            - echo "Provisioning infrastructure on gce"
+            #- IN/helpers/gitRepo/provision_infra/do.sh
       - OUT: state_infra
     on_success:
       - script: echo 'succeeded'
@@ -46,7 +113,10 @@ jobs:
       - IN: verify_infra_changes
         switch: off
       - TASK:
-        - script: IN/helpers/gitRepo/destroy_infra/do.sh
+          name: "Destroy infra"
+          script:
+            - echo "Destroying infrastructure on gce"
+          #- IN/helpers/gitRepo/destroy_infra/do.sh
       - OUT: state_infra
     on_failure:
       - script: echo 'failed'
@@ -58,8 +128,6 @@ jobs:
     steps:
       - IN: helpers
         switch: off
-      - IN: ssh_blog_deploy
-        switch: off
       - IN: state_infra
         switch: off
       - IN: repo_infra
@@ -67,27 +135,22 @@ jobs:
       - IN: provision_infra
         switch: off
       - TASK:
-        - script: IN/helpers/gitRepo/bootstrap/do.sh
+          name: "Bootstraping machine with basic packages"
+          script:
+            - IN/helpers/gitRepo/bootstrap/do.sh
     on_success:
       - script: echo 'succeeded'
     on_failure:
       - script: echo 'failed'
     flags:
-      - infra
+      - ric03uec_notes
 
   - name: notes_runCI
     type: runCI
     steps:
       - OUT: image_notes
     flags:
-      - dev
-
-  - name: demoBlog_runCI
-    type: runCI
-    steps:
-      - OUT: image_blog
-    flags:
-      - demo
+      - ric03uec_notes
 
   - name: deploy_notes
     type: runSh
@@ -115,22 +178,4 @@ jobs:
     on_failure:
       - NOTIFY: slack
     flags:
-      - dev
-
-  - name: deploy_blog
-    type: runSh
-    steps:
-      - IN: state_infra
-        switch: off
-      - IN: helpers
-        switch: off
-      - IN: repo_infra
-        switch: off
-      - IN: bootstrap
-        switch: off
-      - IN: ssh_blog_deploy
-      - IN: image_blog
-      - TASK:
-        - script: IN/helpers/gitRepo/deploy_blog/do.sh
-    flags:
-      - dev
+      - ric03uec_notes
