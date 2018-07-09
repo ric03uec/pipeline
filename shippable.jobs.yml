@@ -5,8 +5,6 @@ jobs:
       - IN: helpers
         switch: off
       - IN: state_infra
-      #- IN: creds_aws
-        switch: off
       - IN: repo_infra
       - TASK:
         - script: IN/helpers/gitRepo/verify_infra_changes/do.sh
@@ -23,7 +21,6 @@ jobs:
       - IN: helpers
         switch: off
       - IN: state_infra
-      #- IN: creds_aws
       - IN: repo_infra
         switch: off
       - IN: verify_infra_changes
@@ -44,7 +41,6 @@ jobs:
       - IN: helpers
         switch: off
       - IN: state_infra
-      #- IN: creds_aws
       - IN: repo_infra
         switch: off
       - IN: verify_infra_changes
@@ -61,8 +57,6 @@ jobs:
     type: runSh
     steps:
       - IN: helpers
-        switch: off
-      #- IN: creds_aws
         switch: off
       - IN: ssh_blog_deploy
         switch: off
@@ -102,8 +96,6 @@ jobs:
         switch: off
       - IN: reg_dh_ric03uec
         switch: off
-      #- IN: creds_aws
-        switch: off
       - IN: notes_login_creds
         switch: off
       - IN: helpers
@@ -129,8 +121,6 @@ jobs:
     type: runSh
     steps:
       - IN: state_infra
-        switch: off
-      #- IN: creds_aws
         switch: off
       - IN: helpers
         switch: off
