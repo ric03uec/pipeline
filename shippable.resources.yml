@@ -68,7 +68,7 @@ resources:
     flags:
       - infra
 
-  - name: state_infra
+  - name: state_gce
     type: state
     flags:
       - infra

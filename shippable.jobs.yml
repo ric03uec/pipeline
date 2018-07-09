@@ -5,7 +5,7 @@ jobs:
       - IN: helpers
         switch: off
       - IN: state_infra
-      - IN: creds_aws
+      #- IN: creds_aws
         switch: off
       - IN: repo_infra
       - TASK:
@@ -23,7 +23,7 @@ jobs:
       - IN: helpers
         switch: off
       - IN: state_infra
-      - IN: creds_aws
+      #- IN: creds_aws
       - IN: repo_infra
         switch: off
       - IN: verify_infra_changes
@@ -44,7 +44,7 @@ jobs:
       - IN: helpers
         switch: off
       - IN: state_infra
-      - IN: creds_aws
+      #- IN: creds_aws
       - IN: repo_infra
         switch: off
       - IN: verify_infra_changes
@@ -62,7 +62,7 @@ jobs:
     steps:
       - IN: helpers
         switch: off
-      - IN: creds_aws
+      #- IN: creds_aws
         switch: off
       - IN: ssh_blog_deploy
         switch: off
@@ -102,7 +102,7 @@ jobs:
         switch: off
       - IN: reg_dh_ric03uec
         switch: off
-      - IN: creds_aws
+      #- IN: creds_aws
         switch: off
       - IN: notes_login_creds
         switch: off
@@ -112,7 +112,7 @@ jobs:
         switch: off
       - IN: bootstrap
         switch: off
-      - IN: ssh_notes_deploy
+        #- IN: ssh_notes_deploy
       - IN: image_notes
       - TASK:
           script:
@@ -130,7 +130,7 @@ jobs:
     steps:
       - IN: state_infra
         switch: off
-      - IN: creds_aws
+      #- IN: creds_aws
         switch: off
       - IN: helpers
         switch: off
