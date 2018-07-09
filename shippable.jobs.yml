@@ -65,7 +65,7 @@ jobs:
     steps:
       - IN: helpers
         switch: off
-      - IN: state_infra
+      - IN: state_gce
       - IN: repo_infra
       - TASK:
           name: "Verify infra changes"
@@ -84,7 +84,7 @@ jobs:
     steps:
       - IN: helpers
         switch: off
-      - IN: state_infra
+      - IN: state_gce
       - IN: repo_infra
         switch: off
       - IN: verify_infra_changes
@@ -94,7 +94,7 @@ jobs:
           script:
             - echo "Provisioning infrastructure on gce"
             #- IN/helpers/gitRepo/provision_infra/do.sh
-      - OUT: state_infra
+      - OUT: state_gce
     on_success:
       - script: echo 'succeeded'
     on_failure:
@@ -107,7 +107,7 @@ jobs:
     steps:
       - IN: helpers
         switch: off
-      - IN: state_infra
+      - IN: state_gce
       - IN: repo_infra
         switch: off
       - IN: verify_infra_changes
@@ -117,7 +117,7 @@ jobs:
           script:
             - echo "Destroying infrastructure on gce"
           #- IN/helpers/gitRepo/destroy_infra/do.sh
-      - OUT: state_infra
+      - OUT: state_gce
     on_failure:
       - script: echo 'failed'
     flags:
@@ -128,7 +128,7 @@ jobs:
     steps:
       - IN: helpers
         switch: off
-      - IN: state_infra
+      - IN: state_gce
         switch: off
       - IN: repo_infra
         switch: off
@@ -155,7 +155,7 @@ jobs:
   - name: deploy_notes
     type: runSh
     steps:
-      - IN: state_infra
+      - IN: state_gce
         switch: off
       - IN: reg_dh_ric03uec
         switch: off
