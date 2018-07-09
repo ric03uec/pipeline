@@ -134,6 +134,7 @@ jobs:
         switch: off
       - IN: provision_infra
         switch: off
+      - IN: ssh_notes_deploy
       - TASK:
           name: "Bootstraping machine with basic packages"
           script:
@@ -167,7 +168,7 @@ jobs:
         switch: off
       - IN: bootstrap
         switch: off
-        #- IN: ssh_notes_deploy
+      - IN: ssh_notes_deploy
       - IN: image_notes
       - TASK:
           script:
